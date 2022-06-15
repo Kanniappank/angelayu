@@ -20,6 +20,7 @@ const userSchema = new mongoose.Schema({
 });
 
 secret = process.env.SECRET // this is the secrete
+// after making .gitignore
 userSchema.plugin(encrypt, { secret: secret , encryptedFields: ['password'] });
 
 const User = new mongoose.model("User",userSchema)
